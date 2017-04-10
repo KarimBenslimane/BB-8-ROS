@@ -1,0 +1,2 @@
+bb8_communications:bb8_control:bb8_movement:bb8_sensor:beginner_tutorials:iai_kinect2/iai_kinect2:iai_kinect2/kinect2_bridge:iai_kinect2/kinect2_calibration:iai_kinect2/kinect2_registration:iai_kinect2/kinect2_viewer:rtabmap_ros
+-DCATKIN_DEVEL_PREFIX=/home/karim/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/karim/catkin_ws/install -G Unix Makefiles

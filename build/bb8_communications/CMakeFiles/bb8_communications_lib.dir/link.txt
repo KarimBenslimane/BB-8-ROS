@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g  -shared -Wl,-soname,libbb8_communications_lib.so -o /home/karim/catkin_ws/devel/lib/libbb8_communications_lib.so CMakeFiles/bb8_communications_lib.dir/src/i2c.cpp.o 

@@ -1,0 +1,8 @@
+prefix=/home/karim/catkin_ws/install
+
+Name: bb8_movement
+Description: Description of bb8_movement
+Version: 0.0.1
+Cflags: -I/home/karim/catkin_ws/install/include
+Libs: -L/home/karim/catkin_ws/install/lib 
+Requires: 

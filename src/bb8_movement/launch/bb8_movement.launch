@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="bb8_movement" name="bb8_movement_node" type="bb8_movement_node" output="screen" />
+</launch>

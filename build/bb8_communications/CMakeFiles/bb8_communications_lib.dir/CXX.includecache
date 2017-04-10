@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/karim/catkin_ws/src/bb8_communications/include/bb8_communications/i2c-dev.h
+linux/types.h
+-
+sys/ioctl.h
+-
+
+/home/karim/catkin_ws/src/bb8_communications/include/bb8_communications/i2c.h
+unistd.h
+-
+fcntl.h
+-
+stdint.h
+-
+sys/ioctl.h
+-
+bb8_communications/i2c-dev.h
+-
+errno.h
+-
+stdio.h
+-
+
+/home/karim/catkin_ws/src/bb8_communications/src/i2c.cpp
+bb8_communications/i2c.h
+-
+
