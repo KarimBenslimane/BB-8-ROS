@@ -1,8 +1,0 @@
-prefix=/home/karim/catkin_ws/install
-
-Name: bb8_sensor
-Description: Description of bb8_sensor
-Version: 0.0.1
-Cflags: -I/home/karim/catkin_ws/install/include
-Libs: -L/home/karim/catkin_ws/install/lib 
-Requires: 

@@ -1,3 +1,0 @@
-/home/karim/catkin_ws/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/karim/catkin_ws/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/karim/catkin_ws/cmake-build-debug/CMakeFiles/catkin_ws.dir
