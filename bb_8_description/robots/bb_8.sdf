@@ -1,0 +1,190 @@
+<sdf version='1.6'>
+  <model name='bb_8'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.3 0 -0 0</pose>
+        <mass>40</mass>
+        <inertia>
+          <ixx>0.16</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.16</iyy>
+          <iyz>0</iyz>
+          <izz>0.16</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+    <link name='base_rotation_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.004</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.004</iyy>
+          <iyz>0</iyz>
+          <izz>0.004</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_rotation_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='base_rotation_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.1</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rotation_joint' type='revolute'>
+      <child>base_rotation_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>18.85</effort>
+          <velocity>0.3</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='base_direction_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.049</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.049</iyy>
+          <iyz>0</iyz>
+          <izz>0.049</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_direction_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.35</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name='base_direction_link_visual'>
+        <pose frame=''>0 0 -0.35 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bb_8_description/meshes/bb8/ball_bb8/ball.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='direction_joint' type='revolute'>
+      <child>base_direction_link</child>
+      <parent>base_rotation_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='head_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 1.2e-05 0 -0 0</pose>
+        <mass>0.50001</mass>
+        <inertia>
+          <ixx>0.0080046</ixx>
+          <ixy>-1.03398e-25</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0080046</iyy>
+          <iyz>0</iyz>
+          <izz>0.008001</izz>
+        </inertia>
+      </inertial>
+      <collision name='head_link_collision'>
+        <pose frame=''>0 -0 -0 1.56 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.2</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name='head_link_fixed_joint_lump__camera_link_collision_1'>
+        <pose frame=''>0 0 0.6 0 -0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='head_link_visual'>
+        <pose frame=''>0 0 -0.35 0 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://bb_8_description/meshes/bb8/head_bb8/head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='head_joint' type='revolute'>
+      <child>head_link</child>
+      <parent>base_rotation_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>0.1</effort>
+          <velocity>0.1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>
