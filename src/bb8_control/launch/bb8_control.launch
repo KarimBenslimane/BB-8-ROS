@@ -1,3 +1,0 @@
-<launch>
-    <node pkg="bb8_control" name="bb8_control_node" type="bb8_control_node" output="screen" />
-</launch>
